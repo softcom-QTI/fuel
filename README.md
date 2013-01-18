@@ -1,4 +1,4 @@
-grisoni
+fuel
 =======
 
-Repository for the Grisoni Group POC for fuel delivery.
+Repository for the Fuel POC application that will be used as fuel delivery application.
