@@ -61,7 +61,7 @@ public class RefillService {
      */
     public List<Refill> getAllRefill() {
         Query q = em.createQuery("from Refill");
-        List<Refill> refills = q.getResultList();
+	List<Refill> refills = q.getResultList();
 
         if (refills == null) {
             refills = Collections.emptyList();
