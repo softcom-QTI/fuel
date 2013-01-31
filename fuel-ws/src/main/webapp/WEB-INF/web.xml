@@ -1,0 +1,46 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <!-- One of the way of activating REST Servises is adding these lines, the server is responsible for adding the corresponding servlet automatically. If the src folder, org.jboss.as.quickstarts.rshelloworld.HelloWorld class has the Annotations to receive REST invocation-->
+    
+    <servlet-mapping>
+        <servlet-name>javax.ws.rs.core.Application</servlet-name>
+        <url-pattern>/ws/*</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>Restricted to fuelRole</web-resource-name>
+    		<description>All the WebServices and Webapp are restricted to user with fuelRole</description>
+    		<url-pattern>/*</url-pattern>
+    		<http-method>HEAD</http-method>
+    		<http-method>GET</http-method>
+    		<http-method>POST</http-method>
+    		<http-method>PUT</http-method>
+    		<http-method>DELETE</http-method>
+    		<http-method>OPTIONS</http-method>
+    		<http-method>TRACE</http-method>
+    	</web-resource-collection>
+    	<auth-constraint>
+    		<role-name>fuelRole</role-name>
+    	</auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+    	<auth-method>BASIC</auth-method>
+    	<realm-name>JBoss Secured Realm</realm-name>
+    </login-config>
+    
+    <security-role>
+    	<role-name>fuelRole</role-name>
+    </security-role>
+    
+</web-app>
