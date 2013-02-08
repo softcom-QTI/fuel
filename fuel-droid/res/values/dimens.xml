@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standardMargin">30dp</dimen>
+    <dimen name="togetherMargin">20dp</dimen>
+</resources>
