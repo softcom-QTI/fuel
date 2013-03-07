@@ -23,8 +23,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginRight="@dimen/standardMargin"
         android:layout_marginTop="@dimen/togetherMargin"
-        android:ems="10"
-        android:text="AutoCompleteTextView" >
+        android:ems="10" >
 
         <requestFocus />
     </AutoCompleteTextView>
